@@ -34,8 +34,8 @@ def makeResponse(req):
         speech = "The no. of " + param + " reported in " + state + " is " + condition
     else:
         speech = "The no. of " + param + " cases reported in " + state + " is " + condition
-    return {"fulfillmentMessages": [{"text": {
-        "text": speech}}]}  # return { # "speech": speech, # "displayText":speech, # "source":"apiai-weather-webhook"}
+    return {"fulfillmentMessages": Speech
+           }  # return { # "speech": speech, # "displayText":speech, # "source":"apiai-weather-webhook"}
 
 
 if __name__ == '__main__':
