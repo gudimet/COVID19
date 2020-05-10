@@ -31,21 +31,12 @@ def makeResponse(req):
     Info = json_object['statewise']
     condition = ''.join([i[param] for i in Info if i['state'] == state])
     if param != 'deaths':
-        speech = "The no. of " + param + " reported in " + state + " is " + condition
+        fulfillmentText = "The no. of " + param + " reported in " + state + " is " + condition
     else:
-        speech = "The no. of " + param + " cases reported in " + state + " is " + condition
-      return {
-        "fulfillmentText": [
-                {
-                    "text": {
-                        "text": [
-                            speech
-                        ]
-                        }
-                }
-                          ]
+        fulfillmentText = "The no. of " + param + " cases reported in " + state + " is " + condition
+    return {
+        "fulfillmentText": fulfillmentText
     }
-
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 5000))
